@@ -48,7 +48,7 @@ module.exports = {
         }, event.messageID);
       });
 
-      const response = await axios.get(`http://158.101.198.227:8609/google?prompt=${encodeURIComponent(user)}`);
+      const response = await axios.get(`https://sandipbaruwal.onrender.com/gemini2?prompt=${encodeURIComponent(user)}`);
       const responseData = response.data.response;
       const baby = `(𝗨𝗟𝗠 𝗠𝗢𝗗𝗘𝗟-Trained by Google)\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱\n${responseData}`;
       api.editMessage(formatFont(baby), cliff.messageID);
