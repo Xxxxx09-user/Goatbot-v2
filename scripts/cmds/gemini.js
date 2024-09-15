@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports = {
   config: {
     name: "gemini",
-    aliases: ['ai', 'Ai','Gemini','AI'],
+    aliases: ['ai', 'hinata','Google','gemini'],
     version: 2.0,
     author: "OtinXSandip",
     description: "ai",
