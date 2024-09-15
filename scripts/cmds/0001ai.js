@@ -1,115 +1,33 @@
 const axios = require('axios');
-
-const Prefixes = [
-
-  'gpt',
-
-  'ai',
-
-  'ask',
-
-  'ai',
-
-  'anya',
-
-  'ai',
-
-];
-
-module.exports = {
-
-  config: {
-
-    name: 'ai',
-
-    version: '69',
-
-    author: 'yuki', // do not change
-
-    role: 0,
-
-    category: 'ai',
-
-    shortDescription: {
-
-      en: 'Asks an AI for an answer.',
-
-    },
-
-    longDescription: {
-
-      en: 'Asks an AI for an answer based on the user prompt.',
-
-    },
-
-    guide: {
-
-      en: '{pn} [prompt]',
-
-    },
-
-  },
-
-  onStart: async function () {},
-
-  onChat: async function ({ api, event, args, message }) {
-
-    try {
-
-      const prefix = Prefixes.find((p) => event.body && event.body.toLowerCase().startsWith(p));
-
-      if (!prefix) {
-
-        return; 
-
-      }
-
-      const prompt = event.body.substring(prefix.length).trim();
-
-      if (prompt === '') {
-
-        await message.reply(
-
-          "ðŸ wait ðŸ"
-
-        );
-
-        return;
-
-      }
-
-      await message.reply("ðŸ wait ðŸ");
-
-      const response = await axios.get(`https://api.easy-api.online/v1/globalgpt?q=${encodeURIComponent(prompt)}`);
-
-      if (response.status !== 200 || !response.data) {
-
-
-
-        throw new Error('Invalid or missing response from API');
-
-      }
-
-      const messageText = response.data.content.trim();
-
-      await message.reply(messageText);
-
-      console.log('Sent answer as a reply to user');
-
-    } catch (error) {
-
-      console.error(`Failed to get answer: ${error.message}`);
-
-      api.sendMessage(
-
-    `${error.message}.\n\nYou can try typing your question again or resending it, as there might be a bug from the server that's causing the problem. It might resolve the issue.`,
-
-        event.threadID
-
-      );
-
-    }
-
-  },
-
+module.exports.config = {
+  name: 'ai',
+  version: '1.0.0',
+  role: 0,
+  hasPrefix: false,
+  aliases: ['gpt', 'openai'],
+  description: "An AI command powered by GPT-4",
+  usage: "Ai [promot]",
+  credits: '𝗮𝗲𝘀𝘁𝗵𝗲𝗿',
+  cooldown: 3,
+};
+module.exports.run = async function({
+  api,
+  event,
+  args
+}) {
+  const input = args.join(' ');
+  if (!input) {
+    api.sendMessage(`♡   ∩_∩\n    （„• ֊ •„)♡\n┏━∪∪━━━━ღ❦ღ┓`, event.threadID, event.messageID);
+    return;
+  }
+  api.sendMessage(``, event.threadID, event.messageID);
+  try {
+    const {
+      data
+    } = await axios.get(`https://hashier-api-globalgpt.vercel.app/api/globalgpt?q=${encodeURIComponent(input)}`);
+    const response = data.response;
+    api.sendMessage('♡   ∩_∩\n    （„• ֊ •„)♡\n┏━∪∪━━━━ღ❦ღ┓\n🌐['+ response +'] ♡\n♡   𝘢𝘦𝘴𝘵𝘩𝘦𝘳-[📩]\n┗ღ❦ღ━━━━━━━┛\n[✦]|𝗚𝗣𝗧-𝟰 ', event.threadID, event.messageID);
+  } catch (error) {
+    api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
+  }
 };
