@@ -1,61 +1,58 @@
+const { GoatWrapper } = require('fca-liane-utils');
+const path = require('path');
+const fs = require('fs');
 const axios = require('axios');
-
-const GPT_API_URL = 'https://sandipapi.onrender.com/gpt';
-const PREFIXES = ['ai'];
-const horizontalLine = "━━━━━━━━━━━━━━━";
 
 module.exports = {
   config: {
-    name: "ai",
-    version: 1.0,
-    author: "OtinXSandip",
-    longDescription: "AI",
+    name: "replitstalk",
+    version: "1.0",
+    author: "Eugene Aguilar",
+    countDown: 5,
+    role: 0,
+    longDescription: "Get information about a replit user",
     category: "ai",
     guide: {
-      en: "{p} questions",
-    },
-  },
-  onStart: async function () {
-    // Initialization logic if needed
-  },
-  onChat: async function ({ api, event, args, message }) {
-    try {
-      const prefix = PREFIXES.find((p) => event.body && event.body.toLowerCase().startsWith(p));
-
-      if (!prefix) {
-        return; // Invalid prefix, ignore the command
-      }
-
-      const prompt = event.body.substring(prefix.length).trim();
-
-      if (!prompt) {
-        const defaultMessage = getCenteredHeader("MR PERFECT | 🧋✨") + "\n" + horizontalLine + "\nHey! How can I assist you in your AI journey?\n" + horizontalLine;
-        await message.reply(defaultMessage);
-        return;
-      }
-
-      const answer = await getGPTResponse(prompt);
-
-      // Adding header and horizontal lines to the answer
-      const answerWithHeader = getCenteredHeader("𝙼r perfect | 🧋✨") + "\n" + horizontalLine + "\n" + answer + "\n" + horizontalLine;
-
-      await message.reply(answerWithHeader);
-    } catch (error) {
-      console.error("Error:", error.message);
-      // Additional error handling if needed
+      en: "{pn} [username]"
     }
-  }
+  },
+
+  onStart: async function({ api, event, args }) {
+    try {
+      const username = args.join(" ");
+
+      if (!username) {
+        return api.sendMessage(`Please provide a username.`, event.threadID, event.messageID);
+      }
+
+      api.sendMessage(`Processing, please wait...`, event.threadID, event.messageID);
+
+      const response = await axios.get(`https://hoanghao.me/api/replitinfo?username=${username}`);
+      const title = response.data.title;
+      const follower = response.data.followers;
+      const following = response.data.following;
+      const t = response.data.activeOnline;
+      const l = response.data.lastOnlineHours;
+      const avt = response.data.image;
+
+      const imagePath = path.join(__dirname, `cache`, `replit.png`);
+      const writer = fs.createWriteStream(imagePath);
+
+      const avatarResponse = await axios.get(avt, { responseType: 'stream' });
+      avatarResponse.data.pipe(writer);
+
+      writer.on('finish', () => {
+        api.sendMessage({
+          body: `Name: ${title}\nFollowers: ${follower}\nFollowing: ${following}\nActive: ${t}\nLast Online: ${l}`,
+          attachment: fs.createReadStream(imagePath),
+        }, event.threadID, event.messageID);
+      });
+    } catch (error) {
+      console.log(error);
+      api.sendMessage(`Error fetching user info.`, event.threadID, event.messageID);
+    }
+	}
 };
 
-function getCenteredHeader(header) {
-  const totalWidth = 32; // Adjust the total width as needed
-  const padding = Math.max(0, Math.floor((totalWidth - header.length) / 2));
-  return " ".repeat(padding) + header;
-}
-
-async function getGPTResponse(prompt) {
-  // Implement caching logic here
-
-  const response = await axios.get(`${GPT_API_URL}?prompt=${encodeURIComponent(prompt)}`);
-  return response.data.answer;
-}
+const wrapper = new GoatWrapper(module.exports);
+wrapper.applyNoPrefix({ allowPrefix: true });
