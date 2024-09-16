@@ -1,5 +1,5 @@
 const axios = require('axios');
-const defaultEmojiTranslate = "🌐";
+const defaultEmojiTranslate = "💚";
 
 module.exports = {
 	config: {
@@ -43,12 +43,12 @@ module.exports = {
 
 		},
 		en: {
-			translateTo: "🌐 Translate from %1 to %2",
+			translateTo: "𝐓𝐫𝐚𝐝𝐮𝐜𝐭𝐢𝐨𝐧 𝐝𝐞 𝐜𝐞 𝐭𝐞𝐱𝐭𝐞 𝐞́𝐜𝐫𝐢𝐭 𝐞𝐧 [%1] 𝐩𝐨𝐮𝐫 [%2]",
 			invalidArgument: "❌ Invalid argument, please choose on or off",
-			turnOnTransWhenReaction: `✅ Turn on translate message when reaction, try to react \"${defaultEmojiTranslate}\" to any message to translate it (not support bot message)\n Only translate message after turn on this feature`,
-			turnOffTransWhenReaction: "✅ Turn off translate message when reaction",
-			inputEmoji: "🌀 Please react to this message to set that emoji as emoji to translate message",
-			emojiSet: "✅ Emoji to translate message is set to %1"
+			turnOnTransWhenReaction: `✅𝘈𝘤𝘵𝘪𝘷𝘢𝘵𝘪𝘰𝘯 𝘥𝘦 𝘭𝘢 𝘵𝘳𝘢𝘥𝘶𝘤𝘵𝘪𝘰𝘯 𝘥𝘶 𝘮𝘦𝘴𝘴𝘢𝘨𝘦 𝘦𝘯 𝘤𝘢𝘴 𝘥𝘦 𝘳𝘦́𝘢𝘤𝘵𝘪𝘰𝘯, 𝘦𝘴𝘴𝘢𝘺𝘦𝘻 𝘥𝘦 𝘳𝘦́𝘢𝘨𝘪𝘳 \"${defaultEmojiTranslate}\" 𝘢̀ 𝘯'𝘪𝘮𝘱𝘰𝘳𝘵𝘦 𝘲𝘶𝘦𝘭 𝘮𝘦𝘴𝘴𝘢𝘨𝘦 𝘱𝘰𝘶𝘳 𝘭𝘦 𝘵𝘳𝘢𝘥𝘶𝘪𝘳𝘦 (𝑵𝑬 𝑷𝑹𝑬𝑵𝑫 𝑷𝑨𝑺 𝑬𝑵 𝑪𝑯𝑨𝑹𝑮𝑬 𝑳𝑬 𝑴𝑬𝑺𝑺𝑨𝑮𝑬 𝑫𝑼 𝑩𝑶𝑻). 𝘓𝘢 𝘵𝘳𝘢𝘥𝘶𝘤𝘵𝘪𝘰𝘯 𝘢𝘶𝘵𝘰𝘮𝘢𝘵𝘪𝘲𝘶𝘦 𝘴𝘦 𝘧𝘢𝘪𝘵 𝘶𝘯𝘪𝘲𝘶𝘦𝘮𝘦𝘯𝘵 𝘢𝘱𝘳𝘦̀𝘴 𝘢𝘷𝘰𝘪𝘳 𝘢𝘤𝘵𝘪𝘷𝘦́ 𝘤𝘦𝘵𝘵𝘦 𝘧𝘰𝘯𝘤𝘵𝘪𝘰𝘯𝘯𝘢𝘭𝘪𝘵𝘦́....🍀`,
+			turnOffTransWhenReaction: "✅ 𝘋𝘦́𝘴𝘢𝘤𝘵𝘪𝘷𝘢𝘵𝘪𝘰𝘯 𝘥𝘦 𝘭𝘢 𝘵𝘳𝘢𝘥𝘶𝘤𝘵𝘪𝘰𝘯 𝘢𝘶𝘵𝘰𝘮𝘢𝘵𝘪𝘲𝘶𝘦 𝘱𝘢𝘳 𝘳𝘦́𝘢𝘤𝘵𝘪𝘰𝘯 𝘥𝘶 𝘮𝘦𝘴𝘴𝘢𝘨𝘦 𝘢𝘷𝘦𝘤 𝘴𝘶𝘤𝘤𝘦̀𝘴 🎉",
+			inputEmoji: "𝘝𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘳𝘦́𝘢𝘨𝘪𝘳 𝘢̀ 𝘤𝘦 𝘮𝘦𝘴𝘴𝘢𝘨𝘦 𝘱𝘰𝘶𝘳 𝘥𝘦́𝘧𝘪𝘯𝘪𝘳 𝘤𝘦𝘵 𝘦𝘮𝘰𝘫𝘪 𝘤𝘰𝘮𝘮𝘦 𝘦𝘮𝘰𝘫𝘪 𝘱𝘰𝘶𝘳 𝘵𝘳𝘢𝘥𝘶𝘪𝘳𝘦 𝘭𝘦 𝘮𝘦𝘴𝘴𝘢𝘨𝘦",
+			emojiSet: "✅ 𝘓'𝘦́𝘮𝘰𝘫𝘪 𝘥𝘦 𝘵𝘳𝘢𝘥𝘶𝘤𝘵𝘪𝘰𝘯 𝘦𝘴𝘵 𝘥𝘦́𝘧𝘪𝘯𝘪𝘵 𝘴𝘶𝘳 [%1]"
 		}
 	},
 
@@ -130,7 +130,7 @@ module.exports = {
 				return message.reply(getLang("emojiSet", emoji), () => message.unsend(Reaction.messageID));
 			}
 			case "translate": {
-				const emojiTrans = await threadsData.get(event.threadID, "data.translate.emojiTranslate") || "🌐";
+				const emojiTrans = await threadsData.get(event.threadID, "data.translate.emojiTranslate") || "💚";
 				if (event.reaction == emojiTrans) {
 					const langCodeTrans = await threadsData.get(event.threadID, "data.lang") || global.GoatBot.config.language;
 					const content = Reaction.body;
