@@ -55,24 +55,24 @@ module.exports = {
 			unloadedFile: "✅ | Đã unload lệnh \"%1\""
 		},
 		en: {
-			missingFileName: "⚠️ | Please enter the command name you want to reload",
-			loaded: "✅ | Loaded event command \"%1\" successfully",
-			loadedError: "❌ | Loaded event command \"%1\" failed with error\n%2: %3",
+			missingFileName: "⚠️ |V𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘴𝘢𝘪𝘴𝘪𝘳 𝘭𝘦 𝘯𝘰𝘮 𝘥𝘦 𝘭𝘢 𝘤𝘰𝘮𝘮𝘢𝘯𝘥𝘦 𝘲𝘶𝘦 𝘷𝘰𝘶𝘴 𝘴𝘰𝘶𝘩𝘢𝘪𝘵𝘦𝘻 𝘳𝘦𝘤𝘩𝘢𝘳𝘨𝘦𝘻",
+			loaded: "✅ | 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦 \"%1\" 𝘪𝘯𝘴𝘵𝘢𝘭𝘭𝘦́𝘦 𝘢𝘷𝘦𝘤 𝘴𝘶𝘤𝘤𝘦̀𝘴 ",
+			loadedError: "❌ |𝘓𝘢 𝘤𝘮𝘥 𝘥'𝘦́𝘷𝘦̀𝘯𝘦𝘮𝘦𝘯𝘵 𝘤𝘩𝘢𝘳𝘨𝘦́ \"%1\" 𝘢 𝘦́𝘤𝘩𝘰𝘶𝘦́ 𝘢𝘷𝘦𝘤 𝘭'𝘦𝘳𝘳𝘦𝘶𝘳\n%2: %3",
 			loadedSuccess: "✅ | Loaded \"%1\" event command successfully",
 			loadedFail: "❌ | Loaded event command \"%1\" failed\n%2",
 			missingCommandNameUnload: "⚠️ | Please enter the command name you want to unload",
 			unloaded: "✅ | Unloaded event command \"%1\" successfully",
 			unloadedError: "❌ | Unloaded event command \"%1\" failed with error\n%2: %3",
-			missingUrlCodeOrFileName: "⚠️ | Please enter the url or code and command file name you want to install",
-			missingUrlOrCode: "⚠️ | Please enter the url or code of the command file you want to install",
-			missingFileNameInstall: "⚠️ | Please enter the file name to save the command (with .js extension)",
-			invalidUrlOrCode: "⚠️ | Unable to get command code",
-			alreadExist: "⚠️ | The command file already exists, are you sure you want to overwrite the old command file?\nReact to this message to continue",
-			installed: "✅ | Installed event command \"%1\" successfully, the command file is saved at %2",
+			missingUrlCodeOrFileName: "⚠️ |𝘝𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘴𝘢𝘪𝘴𝘪𝘳 𝘭'𝘜𝘙𝘓 𝘰𝘶 𝘭𝘦 𝘤𝘰𝘥𝘦 𝘦𝘵 𝘭𝘦 𝘯𝘰𝘮 𝘥𝘶 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘥𝘦 𝘤𝘮𝘥 𝘲𝘶𝘦 𝘵𝘶 𝘷𝘦𝘶𝘹 𝘪𝘯𝘴𝘵𝘢𝘭𝘭𝘦𝘻",
+			missingUrlOrCode: "⚠️ |𝘝𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘴𝘢𝘪𝘴𝘪𝘳 𝘭'𝘜𝘙𝘓 𝘰𝘶 𝘭𝘦 𝘤𝘰𝘥𝘦 𝘦𝘵 𝘭𝘦 𝘯𝘰𝘮 𝘥𝘶 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘥𝘦 𝘤𝘮𝘥 𝘲𝘶𝘦 𝘵𝘶 𝘷𝘦𝘶𝘹 𝘪𝘯𝘴𝘵𝘢𝘭𝘭𝘦𝘻",
+			missingFileNameInstall: "⚠️ | 𝘝𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘴𝘢𝘪𝘴𝘪𝘳 𝘭𝘦 𝘯𝘰𝘮 𝘥𝘶 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘱𝘰𝘶𝘳 𝘦𝘯𝘳𝘦𝘨𝘪𝘴𝘵𝘳𝘦𝘳 𝘭𝘢 𝘤𝘮𝘥 ( 𝘢𝘷𝘦𝘤 𝘭'𝘦𝘹𝘵𝘦𝘯𝘴𝘪𝘰𝘯 .𝘫𝘴)",
+			invalidUrlOrCode: "⚠️ | 𝘐𝘮𝘱𝘰𝘴𝘴𝘪𝘣𝘭𝘦 𝘥'𝘰𝘣𝘵𝘦𝘯𝘪𝘳 𝘭𝘦 𝘤𝘰𝘥𝘦 𝘥𝘦 𝘭𝘢 𝘤𝘮𝘥",
+			alreadExist: "⚠️ | 𝘓𝘦 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘥𝘦 𝘭𝘢 𝘤𝘮𝘥 𝘦𝘹𝘪𝘴𝘵𝘦 𝘥𝘦́𝘫𝘢̀. 𝘚𝘪 𝘵𝘶 𝘴𝘰𝘶𝘩𝘢𝘪𝘵𝘦𝘴 𝘦́𝘤𝘳𝘢𝘴𝘦𝘳 𝘭'𝘢𝘯𝘤𝘪𝘦𝘯 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘥𝘦 𝘤𝘮𝘥.𝘙𝘦́𝘢𝘨𝘪𝘴 𝘢̀ 𝘤𝘦 𝘮𝘦𝘴𝘴𝘢𝘨𝘦 𝘱𝘰𝘶𝘳 𝘤𝘰𝘯𝘵𝘪𝘯𝘶𝘦𝘳..💚",
+			installed: "✅ | 𝘊𝘮𝘥 \"%1\" 𝘪𝘯𝘴𝘵𝘢𝘭𝘭𝘦́ 𝘢𝘷𝘦𝘤 𝘴𝘶𝘤𝘤𝘦̀𝘴,𝘭𝘦 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘥𝘦 𝘤𝘮𝘥 𝘦𝘴𝘵 𝘦𝘯𝘳𝘦𝘨𝘪𝘴𝘵𝘳𝘦́ 𝘢̀ %2",
 			installedError: "❌ | Installed event command \"%1\" failed with error\n%2: %3",
-			missingFile: "⚠️ | File \"%1\" not found",
-			invalidFileName: "⚠️ | Invalid file name",
-			unloadedFile: "✅ | Unloaded command \"%1\""
+			missingFile: "⚠️ |𝘍𝘪𝘤𝘩𝘪𝘦𝘳 \"%1\" 𝘪𝘯𝘵𝘳𝘰𝘶𝘷𝘢𝘣𝘭𝘦",
+			invalidFileName: "⚠️ |𝘕𝘰𝘮 𝘥𝘶 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘪𝘯𝘷𝘢𝘭𝘪𝘥𝘦",
+			unloadedFile: "✅ | 𝘊𝘮𝘥 \"%1\" 𝘥𝘦́𝘤𝘩𝘢𝘳𝘨𝘦́𝘦 "
 		}
 	},
 
